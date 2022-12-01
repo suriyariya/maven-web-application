@@ -27,12 +27,12 @@ try{
   }
   }
   */
-  } //try closing
+  }//try closing
   catch(e){
   currentBuild.result= "SUCCESS"
   throw e
-  } //catch closing
-  finally {
+  }//catch closing
+  finally{
   slackNotifications(currentBuild.result)
   }
 } //node closing
@@ -62,5 +62,5 @@ def slackNotifications(String buildStatus = 'STARTED') {
   }
 
   // Send notifications
-  slackSend (color: colorCode, message: summary, channel: "#walmart")
+  slackSend (color: colorCode, message: summary)
 }
