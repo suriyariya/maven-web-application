@@ -29,19 +29,19 @@ try{
   */
   } //try closing
   catch(e){
-  slackNotifications(currentBuild.result)
+  currentBuild.result= "SUCCESS"
   throw e
   } //catch closing
   finally {
-  currentBuild.result=""
+  slackNotifications(currentBuild.result)
   }
 } //node closing
   //Code Snippet for sending slack notifications.
 
 def slackNotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
-  //buildStatus =  buildStatus ?: 'SUCCESS'
-  buildStatus = buildStatus ? "SUCCESS":"FAILURE"
+  buildStatus =  buildStatus ?: 'SUCCESS'
+  //buildStatus = buildStatus ? "SUCCESS":"FAILURE"
 
   // Default values
   def colorName = 'RED'
