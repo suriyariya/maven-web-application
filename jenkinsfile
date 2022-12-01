@@ -1,4 +1,5 @@
 node{
+slackNotifications('STARTED')
 try{
   echo "The Job Name is: ${env.JOB_NAME}"
   echo "The Node Number is: ${env.NODE_NAME}"
