@@ -14,7 +14,6 @@ try{
   sh "${mavenHome}/bin/mvn package"
   }
   
-  /*
   stage('ExecuteSonarQubeReport'){
   sh "${mavenHome}/bin/mvn clean sonar:sonar"
   }
@@ -27,7 +26,6 @@ try{
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.30.187:/opt/apache-tomcat-9.0.68/webapps"
   }
   }
-  */
   }//try closing
   catch(e){
   currentBuild.result= "SUCCESS"
